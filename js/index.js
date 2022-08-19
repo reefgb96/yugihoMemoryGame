@@ -2,7 +2,7 @@
 
 const cardBack = document.querySelectorAll(".card-face");
 const card = document.querySelector(".card");
-let timeLeft = 100;
+let timeLeft = 12;
 let flips = 0;
 let score;
 let chosenCards = [];
@@ -36,7 +36,11 @@ const initBoard = () => {
     edlTimeRemaining.innerHTML = timeLeft;
     timeLeft--;
     if (timeLeft <= 10) {
-      edlTimeRemaining.style.color = "red";
+      edlTimeRemaining.style.color = "crimson";
+      const tickingAudio = new Audio(
+        document.getElementById("tickingClock").src
+      );
+      tickingAudio.play();
     }
     if (timeLeft < 0) {
       clearInterval(timer);
@@ -84,9 +88,7 @@ const checkMatch = (cardNum) => {
   } else {
     flippedCArds.forEach((vCard) => {
       setTimeout(() => {
-        const failAudio = new Audio(
-          "http://127.0.0.1:5500/assetes/audio/FunnyLose.mp3"
-        );
+        const failAudio = new Audio(document.getElementById("FunnyLose").src);
         failAudio.play();
         vCard.classList.remove("visible");
       }, 1000);
