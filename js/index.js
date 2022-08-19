@@ -2,7 +2,7 @@
 
 const cardBack = document.querySelectorAll(".card-face");
 const card = document.querySelector(".card");
-let timeLeft = 120;
+let timeLeft = 100;
 let flips = 0;
 let score;
 let chosenCards = [];
