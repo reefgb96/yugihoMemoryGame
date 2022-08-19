@@ -70,9 +70,7 @@ let newArr = Array.from(document.querySelectorAll(`.card`));
 const checkMatch = (cardNum) => {
   let flippedCArds = document.querySelectorAll(".visible");
   if (chosenCards[0].title === chosenCards[1].title) {
-    const successAudio = new Audio(
-      "http://127.0.0.1:5500/assetes/audio/Success.mp3"
-    );
+    const successAudio = new Audio(document.getElementById("Success").src);
     successAudio.play();
     matchedCardsArr.push(...chosenCards);
     flippedCArds.forEach((vCard) => {
@@ -100,9 +98,7 @@ const checkMatch = (cardNum) => {
 
 const gameOver = () => {
   if (timeLeft === 0) {
-    const looseAudio = new Audio(
-      "http://127.0.0.1:5500/assetes/audio/WahWahWah.mp3"
-    );
+    const looseAudio = new Audio(document.getElementById("WahWahWah").src);
     looseAudio.play();
     chosenCards = [];
     matchedCardsArr = [];
@@ -123,9 +119,7 @@ const calcScore = (time, tries) => {
 };
 
 const win = () => {
-  const winAudio = new Audio(
-    "http://127.0.0.1:5500/assetes/audio/Cheering.mp3"
-  );
+  const winAudio = new Audio(document.getElementById("Cheering").src);
   winAudio.play();
   const bodyDiv = document.querySelector("body");
   setInterval(() => {
