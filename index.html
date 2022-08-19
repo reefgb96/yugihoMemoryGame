@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yu Gi Ho! Memory Card Game</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons.flaticon.com/png/512/4771/premium/4771954.png?token=exp=1660715969~hmac=b7fc3678f4b7be47c7d8e884c0172178"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <h1 class="page-title">Yu Gi Ho! Memory Card Game</h1>
+    <!-- <div class="overlay-text visible">
+    Click to Start
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    GAME OVER
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    VICTORY
+    <span class="overlay-text-small">Click to Restart</span>
+  </div> -->
+    <div class="game-container">
+      <div class="game-info-container">
+        <div class="game-info">Time <span id="time-remaining">100</span></div>
+        <div class="game-info" id="scoreDiv"><span id="score"></span></div>
+        <div class="game-info">Flips <span id="flips">0</span></div>
+      </div>
+      <!-- <div class="card" onclick="handleFlipCard(1)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/BlueEyesWhiteDragon.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(2)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/ExodiatheForbiddenOne.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(3)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/LegendarySixSamuraiShiEn.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(4)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/DarkMagician.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(5)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/PerformapalMonkeyboard.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(6)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/CyberDragon.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(7)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/PotofGreed.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(8)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/Terraforming.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(9)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/CyberDragon.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(10)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/PerformapalMonkeyboard.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(11)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/DarkMagician.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(12)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/BlueEyesWhiteDragon.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(13)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/PotofGreed.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(14)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/LegendarySixSamuraiShiEn.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(15)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/ExodiatheForbiddenOne.webp"
+          />
+        </div>
+      </div>
+      <div class="card" onclick="handleFlipCard(16)">
+        <div class="card-back card-face">
+          <img
+            class="spider"
+            src="http://127.0.0.1:5500/assetes/img/ygo-cardback.jpg"
+          />
+        </div>
+        <div class="card-front card-face">
+          <img
+            class="card-value"
+            src="http://127.0.0.1:5500/assetes/img/Terraforming.webp"
+          />
+        </div>
+      </div>
+    </div> -->
+    <script src="js/models/card.model.js"></script>
+    <script src="js/dataInit.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+  <!-- Side Links Only -->
+  <!-- <div class="side-links">
+        <a href="https://youtu.be/28VfzEiJgy4" target="_blank" class="side-link side-link-youtube">
+          <i class="fab fa-youtube-square side-link-icon"></i>
+          <span class="side-link-text">View Tutorial</span>
+        </a>
+        <a href="https://github.com/WebDevSimplified" target="_blank" class="side-link side-link-github side-link-icon">
+          <i class="fab fa-github-square"></i>
+          <span class="side-link-text">View GitHub</span>
+        </a>
+        <a href="https://twitter.com/DevSimplified" target="_blank" class="side-link side-link-twitter">
+          <i class="fab fa-twitter-square side-link-icon"></i>
+          <span class="side-link-text">View Twitter</span>
+        </a>
+      </div>
+    </body> -->
+</html>
