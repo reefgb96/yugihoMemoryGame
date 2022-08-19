@@ -84,12 +84,12 @@ const checkMatch = (cardNum) => {
     if (matchedCardsArr.length === 16) win();
     chosenCards = [];
   } else {
-    const failAudio = new Audio(
-      "http://127.0.0.1:5500/assetes/audio/FunnyLose.mp3"
-    );
-    failAudio.play();
     flippedCArds.forEach((vCard) => {
       setTimeout(() => {
+        const failAudio = new Audio(
+          "http://127.0.0.1:5500/assetes/audio/FunnyLose.mp3"
+        );
+        failAudio.play();
         vCard.classList.remove("visible");
       }, 1000);
       vCard.classList.remove("disabled");
